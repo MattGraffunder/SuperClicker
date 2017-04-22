@@ -1,0 +1,4 @@
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\WindowsInterface\bin\Release\WindowsInterface.dll
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\WindowsInterface\bin\Release\WindowsInterface.pdb
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\WindowsInterface\obj\Release\WindowsInterface.dll
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\WindowsInterface\obj\Release\WindowsInterface.pdb

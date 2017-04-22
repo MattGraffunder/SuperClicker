@@ -1,0 +1,11 @@
+C:\Users\Matt\documents\visual studio 2012\Projects\SuperClicker\SuperClicker\bin\Release\SuperClicker.exe.config
+C:\Users\Matt\documents\visual studio 2012\Projects\SuperClicker\SuperClicker\bin\Release\SuperClicker.exe
+C:\Users\Matt\documents\visual studio 2012\Projects\SuperClicker\SuperClicker\bin\Release\SuperClicker.pdb
+C:\Users\Matt\documents\visual studio 2012\Projects\SuperClicker\SuperClicker\obj\Release\SuperClicker.csprojResolveAssemblyReference.cache
+C:\Users\Matt\documents\visual studio 2012\Projects\SuperClicker\SuperClicker\obj\Release\SuperClicker.Properties.Resources.resources
+C:\Users\Matt\documents\visual studio 2012\Projects\SuperClicker\SuperClicker\obj\Release\SuperClicker.csproj.GenerateResource.Cache
+C:\Users\Matt\documents\visual studio 2012\Projects\SuperClicker\SuperClicker\obj\Release\SuperClicker.exe
+C:\Users\Matt\documents\visual studio 2012\Projects\SuperClicker\SuperClicker\obj\Release\SuperClicker.pdb
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\SuperClicker\bin\Release\WindowsInterface.dll
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\SuperClicker\bin\Release\WindowsInterface.pdb
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\SuperClicker\obj\Release\SuperClicker.ClickerView.resources

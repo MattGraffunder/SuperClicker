@@ -1,0 +1,5 @@
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\WindowsInterface\bin\Debug\WindowsInterface.dll
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\WindowsInterface\bin\Debug\WindowsInterface.pdb
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\WindowsInterface\obj\Debug\WindowsInterface.dll
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\WindowsInterface\obj\Debug\WindowsInterface.pdb
+C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\WindowsInterface\obj\Debug\WindowsInterface.csprojResolveAssemblyReference.cache

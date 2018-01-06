@@ -11,7 +11,9 @@ using System;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System.Threading;
-using SuperClicker.ClickStrategies;
+using SuperClicker.Core.ClickStrategies;
+using SuperClicker.Core;
+using WindowsInterface;
 
 //using System.Windows.Forms.Cursor;
 
@@ -30,8 +32,8 @@ namespace SuperClicker
         public ClickerView()
         {
             InitializeComponent();
-            
-            _clicker = new Clicker(DEFAULT_CLICKS_PER_SECOND);
+
+            _clicker = new Clicker(DEFAULT_CLICKS_PER_SECOND, () => new Point(Cursor.Position.X, Cursor.Position.Y));
             _clicker.ClickStatusUpdated += clicker_ClickStatusUpdated;
 
             _clicksPerSecond = DEFAULT_CLICKS_PER_SECOND;
@@ -82,7 +84,7 @@ namespace SuperClicker
 
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == Constants.WM_HOTKEY_MSG_ID)
+            if (m.Msg == WindowsHotkey.WM_HOTKEY_MSG_ID)
             {
                 HandleHotkey();
             }

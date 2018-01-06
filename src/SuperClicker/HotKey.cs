@@ -32,12 +32,12 @@ namespace SuperClicker
 
         public bool Register()
         {
-            return WindowsHotkey.RegisterHotKey(hWnd, id, key);
+            return WindowsHotkey.Register(hWnd, id, key);
         }
 
         public bool Unregiser()
         {
-            return WindowsHotkey.UnregisterHotKey(hWnd, id);
+            return WindowsHotkey.Unregister(hWnd, id);
         }
     }
 }

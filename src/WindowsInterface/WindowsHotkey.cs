@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsInterface
 {
-    class WindowsHotkey
+    public class WindowsHotkey
     {
         //windows message id for hotkey
         public const int WM_HOTKEY_MSG_ID = 0x0312;
@@ -18,12 +18,12 @@ namespace WindowsInterface
         [DllImport("user32.dll")]
         private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
-        public bool Register(IntPtr hWnd, int id, int key)
+        public static bool Register(IntPtr hWnd, int id, int key)
         {
             return RegisterHotKey(hWnd, id, 0, key);
         }
 
-        public bool Unregiser(IntPtr hWnd, int id)
+        public static bool Unregister(IntPtr hWnd, int id)
         {
             return UnregisterHotKey(hWnd, id);
         }

@@ -1,13 +1,16 @@
 ﻿using SuperClicker.Core.ClickStrategies;
 using System;
+using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace SuperClicker.Core
 {
-    class Clicker
+    public class Clicker
     {
         public event EventHandler ClickStatusUpdated;
+
+        Func<Point> _getClickPoint;
 
         Task t;
         int _clicks;
@@ -48,15 +51,18 @@ namespace SuperClicker.Core
             }
         }
 
-        public Clicker(int clicksPerSecond)
+        public Clicker(int clicksPerSecond, Func<Point> getClickPoint)
         {
             t = new Task(SuperClick);
             _clicks = 0;
             _clicksPerSecond = clicksPerSecond;
+
+            _getClickPoint = getClickPoint;
+
             SetMillisecondsBetweenClicks();
         }
 
-        public Clicker() : this(50) { }
+        public Clicker(Func<Point> getClickPoint) : this(50, getClickPoint) { }
 
         public void StartClicking(ClickType type)
         {
@@ -83,7 +89,8 @@ namespace SuperClicker.Core
         {
             while (Active)
             {
-                _clickStrategy.Click(Cursor.Position.X, Cursor.Position.Y);
+                Point clickPoint = _getClickPoint();
+                _clickStrategy.Click(clickPoint.X, clickPoint.Y);
 
                 Clicks++;
 

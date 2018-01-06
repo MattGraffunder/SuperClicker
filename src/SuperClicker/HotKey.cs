@@ -6,30 +6,40 @@ namespace SuperClicker
 {
     internal class HotKey
     {        
-        private int key;
-        private IntPtr hWnd;
-        private int id;
+        private Keys _key;
+        private IntPtr _hWnd;
+        private int _id;
 
         public HotKey(Keys key, Form form)
         {
-            this.key = (int)key;
-            this.hWnd = form.Handle;
-            id = this.GetHashCode();
+            _key = key;
+            _hWnd = form.Handle;
+            _id = GetHashCode();
         }
+
+        public Keys Key => _key;
 
         public override int GetHashCode()
         {
-            return key ^ hWnd.ToInt32();
+            return (int)_key ^ _hWnd.ToInt32();
         }
 
-        public bool Register()
+        public bool Activate()
         {
-            return WindowsHotkey.Register(hWnd, id, key);
+            return WindowsHotkey.Register(_hWnd, _id, (int)_key);
         }
 
-        public bool Unregiser()
+        public bool Deactivate()
         {
-            return WindowsHotkey.Unregister(hWnd, id);
+            return WindowsHotkey.Unregister(_hWnd, _id);
+        }
+
+        public void HandleHotKeyMessages(Message m, Action messageHandler)
+        {
+            if (m.Msg == WindowsHotkey.WM_HOTKEY_MSG_ID)
+            {
+                messageHandler();
+            }
         }
     }
 }

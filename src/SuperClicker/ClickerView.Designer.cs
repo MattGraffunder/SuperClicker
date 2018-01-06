@@ -34,8 +34,8 @@
             this.lblClicksLablel = new System.Windows.Forms.Label();
             this.lblClicks = new System.Windows.Forms.Label();
             this.pnlInfo = new System.Windows.Forms.Panel();
-            this.pnlClickCount = new System.Windows.Forms.Panel();
             this.cbxRightClick = new System.Windows.Forms.CheckBox();
+            this.pnlClickCount = new System.Windows.Forms.Panel();
             this.numClicksPerSecond = new System.Windows.Forms.NumericUpDown();
             this.lblClicksPerSecond = new System.Windows.Forms.Label();
             this.pnlInfo.SuspendLayout();
@@ -106,16 +106,6 @@
             this.pnlInfo.Size = new System.Drawing.Size(334, 20);
             this.pnlInfo.TabIndex = 5;
             // 
-            // pnlClickCount
-            // 
-            this.pnlClickCount.Controls.Add(this.lblClicks);
-            this.pnlClickCount.Controls.Add(this.lblClicksLablel);
-            this.pnlClickCount.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlClickCount.Location = new System.Drawing.Point(234, 0);
-            this.pnlClickCount.Name = "pnlClickCount";
-            this.pnlClickCount.Size = new System.Drawing.Size(100, 20);
-            this.pnlClickCount.TabIndex = 5;
-            // 
             // cbxRightClick
             // 
             this.cbxRightClick.AutoSize = true;
@@ -127,12 +117,32 @@
             this.cbxRightClick.Text = "Right Click";
             this.cbxRightClick.UseVisualStyleBackColor = true;
             // 
+            // pnlClickCount
+            // 
+            this.pnlClickCount.Controls.Add(this.lblClicks);
+            this.pnlClickCount.Controls.Add(this.lblClicksLablel);
+            this.pnlClickCount.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlClickCount.Location = new System.Drawing.Point(234, 0);
+            this.pnlClickCount.Name = "pnlClickCount";
+            this.pnlClickCount.Size = new System.Drawing.Size(100, 20);
+            this.pnlClickCount.TabIndex = 5;
+            // 
             // numClicksPerSecond
             // 
             this.numClicksPerSecond.Location = new System.Drawing.Point(104, 65);
+            this.numClicksPerSecond.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numClicksPerSecond.Name = "numClicksPerSecond";
             this.numClicksPerSecond.Size = new System.Drawing.Size(60, 20);
             this.numClicksPerSecond.TabIndex = 6;
+            this.numClicksPerSecond.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numClicksPerSecond.ValueChanged += new System.EventHandler(this.numClicksPerSecond_ValueChanged);
             // 
             // lblClicksPerSecond

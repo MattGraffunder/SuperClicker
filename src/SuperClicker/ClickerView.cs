@@ -6,7 +6,7 @@ using SuperClicker.Core;
 
 namespace SuperClicker
 {
-    public partial class ClickerView : Form
+    internal partial class ClickerView : Form
     {
         Clicker _clicker;
 
@@ -29,32 +29,21 @@ namespace SuperClicker
             _hotkey.Activate();
         }
 
-        private void clicker_ClickStatusUpdated(object sender, System.EventArgs e)
-        {
-            UpdateLabel();
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            StartClicking();
-        }
-
-        private void btnEnd_Click(object sender, EventArgs e)
-        {
-            _clicker.StopClicking();
-        }
+        #region Update View
 
         private void UpdateLabel()
         {
             if (InvokeRequired)
             {
                 BeginInvoke(new MethodInvoker(UpdateLabel));
+
+                return;
             }
-            else
-            {
-                lblClicks.Text = _clicker.Clicks.ToString("0,0");
-            }
+
+            lblClicks.Text = _clicker.Clicks.ToString("0,0");
         }
+
+        #endregion
 
         #region Hotkey Functionality
 
@@ -62,7 +51,7 @@ namespace SuperClicker
         {
             if (_clicker.Active)
             {
-                _clicker.StopClicking();
+                StopClicking();
             }
             else
             {
@@ -79,10 +68,7 @@ namespace SuperClicker
 
         #endregion
 
-        private void cbxPrevent_CheckedChanged(object sender, EventArgs e)
-        {
-            _clicker.PreventClicking = cbxPrevent.Checked;
-        }
+        #region Clicker Functionality
 
         private void StartClicking()
         {
@@ -92,23 +78,50 @@ namespace SuperClicker
             _clicker.StartClicking(type);
         }
 
-        private void numClicksPerSecond_ValueChanged(object sender, System.EventArgs e)
+        private void StopClicking()
         {
-            int clicksPerSecond = (int)numClicksPerSecond.Value;
-
-            if (clicksPerSecond < 1)
-            {
-                clicksPerSecond = 1;
-                numClicksPerSecond.Value = 1;
-            }
-
-            if (clicksPerSecond > 100)
-            {
-                clicksPerSecond = 100;
-                numClicksPerSecond.Value = 100;
-            }
-
-            _clicker.ClicksPerSecond = (int)numClicksPerSecond.Value;
+            _clicker.StopClicking();
         }
+
+        private void PreventClicking(bool prevent)
+        {
+            _clicker.PreventClicking = prevent;
+        }
+
+        private void SetClicksPerSecond(int clicksPerSecond)
+        {
+            _clicker.ClicksPerSecond = clicksPerSecond;
+        }
+
+        #endregion
+        
+        #region Event Handlers
+
+        private void clicker_ClickStatusUpdated(object sender, EventArgs e)
+        {
+            UpdateLabel();
+        }
+
+        private void numClicksPerSecond_ValueChanged(object sender, EventArgs e)
+        {
+            SetClicksPerSecond((int)numClicksPerSecond.Value);
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            StartClicking();
+        }
+
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            StopClicking();
+        }
+
+        private void cbxPrevent_CheckedChanged(object sender, EventArgs e)
+        {
+            PreventClicking(cbxPrevent.Checked);
+        }
+
+        #endregion
     }
 }

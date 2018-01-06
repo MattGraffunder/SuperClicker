@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperClicker", "SuperClicker\SuperClicker.csproj", "{0A3F0735-3587-42C0-8C7E-06502BF7E68C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperClicker.View", "SuperClicker\SuperClicker.View.csproj", "{0A3F0735-3587-42C0-8C7E-06502BF7E68C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsInterface", "WindowsInterface\WindowsInterface.csproj", "{DE1FFD0B-F885-45B0-9C43-5BF4EBE11C77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperClicker.Core", "SuperClicker.Core\SuperClicker.Core.csproj", "{0411B1F2-88EF-4EAE-9323-6344B82EAFCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{DE1FFD0B-F885-45B0-9C43-5BF4EBE11C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE1FFD0B-F885-45B0-9C43-5BF4EBE11C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE1FFD0B-F885-45B0-9C43-5BF4EBE11C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0411B1F2-88EF-4EAE-9323-6344B82EAFCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0411B1F2-88EF-4EAE-9323-6344B82EAFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0411B1F2-88EF-4EAE-9323-6344B82EAFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0411B1F2-88EF-4EAE-9323-6344B82EAFCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,3 +9,6 @@ C:\Users\Matt\documents\visual studio 2012\Projects\SuperClicker\SuperClicker\ob
 C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\SuperClicker\bin\Release\WindowsInterface.dll
 C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\SuperClicker\bin\Release\WindowsInterface.pdb
 C:\Users\Matt\Documents\Visual Studio 2012\Projects\SuperClicker\SuperClicker\obj\Release\SuperClicker.ClickerView.resources
+C:\git\SuperClicker\SuperClicker\bin\Release\SuperClicker.exe.config
+C:\git\SuperClicker\SuperClicker\obj\Release\SuperClicker.exe
+C:\git\SuperClicker\SuperClicker\obj\Release\SuperClicker.pdb

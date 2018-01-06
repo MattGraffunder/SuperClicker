@@ -1,0 +1,1 @@
+C:\git\SuperClicker\SuperClicker.Core\obj\Release\SuperClicker.Core.csprojResolveAssemblyReference.cache

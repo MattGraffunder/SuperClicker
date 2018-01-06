@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DE1FFD0B-F885-45B0-9C43-5BF4EBE11C77}</ProjectGuid>
+    <ProjectGuid>{0411B1F2-88EF-4EAE-9323-6344B82EAFCC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsInterface</RootNamespace>
-    <AssemblyName>WindowsInterface</AssemblyName>
+    <RootNamespace>SuperClicker.Core</RootNamespace>
+    <AssemblyName>SuperClicker.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,10 +39,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WindowsHotkey.cs" />
-    <Compile Include="MouseButtonEvent.cs" />
-    <Compile Include="WindowsMouseClick.cs" />
+    <Compile Include="Clicker.cs" />
+    <Compile Include="ClickStrategies\ClickStrategy.cs" />
+    <Compile Include="ClickStrategies\ClickStrategyManager.cs" />
+    <Compile Include="ClickStrategies\ClickType.cs" />
+    <Compile Include="ClickStrategies\IClickStrategyManager.cs" />
+    <Compile Include="ClickStrategies\LeftClickStrategy.cs" />
+    <Compile Include="ClickStrategies\RightClickStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WindowsInterface\WindowsInterface.csproj">
+      <Project>{de1ffd0b-f885-45b0-9c43-5bf4ebe11c77}</Project>
+      <Name>WindowsInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SuperClicker.ClickStrategies
+namespace SuperClicker.Core.ClickStrategies
 {
     public class ClickStrategyManager : IClickStrategyManager
     {

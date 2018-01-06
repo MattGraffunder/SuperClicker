@@ -1,15 +1,9 @@
-﻿using SuperClicker.ClickStrategies;
+﻿using SuperClicker.Core.ClickStrategies;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using WindowsInterface;
 
-namespace SuperClicker
+namespace SuperClicker.Core
 {
     class Clicker
     {
@@ -62,10 +56,7 @@ namespace SuperClicker
             SetMillisecondsBetweenClicks();
         }
 
-        public Clicker()
-            : this(50)
-        {
-        }
+        public Clicker() : this(50) { }
 
         public void StartClicking(ClickType type)
         {
@@ -92,7 +83,7 @@ namespace SuperClicker
         {
             while (Active)
             {
-                _clickStrategy.Click();
+                _clickStrategy.Click(Cursor.Position.X, Cursor.Position.Y);
 
                 Clicks++;
 

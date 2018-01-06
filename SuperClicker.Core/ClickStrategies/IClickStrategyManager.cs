@@ -1,4 +1,4 @@
-﻿namespace SuperClicker.ClickStrategies
+﻿namespace SuperClicker.Core.ClickStrategies
 {
     interface IClickStrategyManager
     {

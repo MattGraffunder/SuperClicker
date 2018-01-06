@@ -59,13 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clicker.cs" />
-    <Compile Include="ClickStrategies\ClickStrategy.cs" />
-    <Compile Include="ClickStrategies\ClickStrategyManager.cs" />
-    <Compile Include="ClickStrategies\ClickType.cs" />
-    <Compile Include="ClickStrategies\IClickStrategyManager.cs" />
-    <Compile Include="ClickStrategies\LeftClickStrategy.cs" />
-    <Compile Include="ClickStrategies\RightClickStrategy.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="ClickerView.cs">
       <SubType>Form</SubType>
@@ -102,6 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SuperClicker.Core\SuperClicker.Core.csproj">
+      <Project>{0411b1f2-88ef-4eae-9323-6344b82eafcc}</Project>
+      <Name>SuperClicker.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WindowsInterface\WindowsInterface.csproj">
       <Project>{de1ffd0b-f885-45b0-9c43-5bf4ebe11c77}</Project>
       <Name>WindowsInterface</Name>

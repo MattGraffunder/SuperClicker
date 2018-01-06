@@ -1,6 +1,0 @@
-C:\git\SuperClicker\SuperClicker\obj\Release\SuperClicker.View.csprojResolveAssemblyReference.cache
-C:\git\SuperClicker\SuperClicker\obj\Release\SuperClicker.ClickerView.resources
-C:\git\SuperClicker\SuperClicker\obj\Release\SuperClicker.Properties.Resources.resources
-C:\git\SuperClicker\SuperClicker\obj\Release\SuperClicker.View.csproj.GenerateResource.Cache
-C:\git\SuperClicker\SuperClicker\obj\Release\SuperClicker.exe
-C:\git\SuperClicker\SuperClicker\obj\Release\SuperClicker.pdb

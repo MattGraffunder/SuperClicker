@@ -167,6 +167,7 @@
             this.Controls.Add(this.btnStart);
             this.Name = "ClickerView";
             this.Text = "Super Clicker";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClickerView_FormClosed);
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
             this.pnlClickCount.ResumeLayout(false);

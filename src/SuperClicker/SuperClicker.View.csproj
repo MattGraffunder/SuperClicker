@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClickerViewPresenter.cs" />
+    <Compile Include="CursorClickLocationStrategy.cs" />
+    <Compile Include="SelectionClickLocationStrategy.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="ClickerView.cs">
       <SubType>Form</SubType>

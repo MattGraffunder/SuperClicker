@@ -74,6 +74,11 @@ namespace SuperClicker
             _presenter.RightClick = cbxRightClick.Checked;
         }
 
-        #endregion        
+        #endregion
+
+        private void ClickerView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _hotkey.Deactivate();
+        }
     }
 }

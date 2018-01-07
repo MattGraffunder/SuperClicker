@@ -1,6 +1,7 @@
 ﻿using SuperClicker.Core;
 using SuperClicker.Core.ClickStrategies;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -15,7 +16,7 @@ namespace SuperClicker
 
         public ClickerViewPresenter(ClickerView view)
         {
-            _clicker = new Clicker(DEFAULT_CLICKS_PER_SECOND, () => new Point(Cursor.Position.X, Cursor.Position.Y));
+            _clicker = new Clicker(DEFAULT_CLICKS_PER_SECOND);
 
             _clicker.ClickStatusUpdated += clicker_ClickStatusUpdated;
 
@@ -34,7 +35,11 @@ namespace SuperClicker
             //Determine if right or left click
             ClickType type = RightClick ? ClickType.Right : ClickType.Left;
 
-            _clicker.StartClicking(type);
+            var pointList = new List<Point>() { new Point(440, 320), new Point(440, 350) };
+            var memclicker = new SelectionClickLocationStrategy(pointList);
+
+            //_clicker.StartClicking(type, new CursorClickLocationStrategy());
+            _clicker.StartClicking(type, memclicker);
         }
 
         public void StopClicking()

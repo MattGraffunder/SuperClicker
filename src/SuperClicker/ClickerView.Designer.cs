@@ -116,6 +116,7 @@
             this.cbxRightClick.TabIndex = 6;
             this.cbxRightClick.Text = "Right Click";
             this.cbxRightClick.UseVisualStyleBackColor = true;
+            this.cbxRightClick.CheckedChanged += new System.EventHandler(this.cbxRightClick_CheckedChanged);
             // 
             // pnlClickCount
             // 

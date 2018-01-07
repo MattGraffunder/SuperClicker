@@ -1,29 +1,20 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
-using SuperClicker.Core.ClickStrategies;
-using SuperClicker.Core;
 
 namespace SuperClicker
 {
     internal partial class ClickerView : Form
     {
-        Clicker _clicker;
-
+        ClickerViewPresenter _presenter;
         HotKey _hotkey;
-
-        private const int DEFAULT_CLICKS_PER_SECOND = 50;
-        private int _clicksPerSecond;
 
         public ClickerView()
         {
             InitializeComponent();
 
-            _clicker = new Clicker(DEFAULT_CLICKS_PER_SECOND, () => new Point(Cursor.Position.X, Cursor.Position.Y));
-            _clicker.ClickStatusUpdated += clicker_ClickStatusUpdated;
-
-            _clicksPerSecond = DEFAULT_CLICKS_PER_SECOND;
-            numClicksPerSecond.Value = _clicksPerSecond;
+            _presenter = new ClickerViewPresenter(this);
+            
+            numClicksPerSecond.Value = _presenter.ClicksPerSecond;
 
             _hotkey = new HotKey(Keys.Space, this);
             _hotkey.Activate();
@@ -31,97 +22,58 @@ namespace SuperClicker
 
         #region Update View
 
-        private void UpdateLabel()
+        public void UpdateView()
         {
             if (InvokeRequired)
             {
-                BeginInvoke(new MethodInvoker(UpdateLabel));
+                BeginInvoke(new MethodInvoker(UpdateView));
 
                 return;
             }
 
-            lblClicks.Text = _clicker.Clicks.ToString("0,0");
+            lblClicks.Text = _presenter.TotalClicks.ToString("0,0");
         }
 
         #endregion
 
         #region Hotkey Functionality
-
-        private void HandleHotkey()
-        {
-            if (_clicker.Active)
-            {
-                StopClicking();
-            }
-            else
-            {
-                StartClicking();
-            }
-        }
-
+        
         protected override void WndProc(ref Message m)
         {
-            _hotkey?.HandleHotKeyMessages(m, HandleHotkey);
+            _hotkey?.HandleHotKeyMessages(m, _presenter.HotkeyActivated);
 
             base.WndProc(ref m);
         }
 
         #endregion
-
-        #region Clicker Functionality
-
-        private void StartClicking()
-        {
-            //Determine if right or left click
-            ClickType type = cbxRightClick.Checked ? ClickType.Right : ClickType.Left;
-
-            _clicker.StartClicking(type);
-        }
-
-        private void StopClicking()
-        {
-            _clicker.StopClicking();
-        }
-
-        private void PreventClicking(bool prevent)
-        {
-            _clicker.PreventClicking = prevent;
-        }
-
-        private void SetClicksPerSecond(int clicksPerSecond)
-        {
-            _clicker.ClicksPerSecond = clicksPerSecond;
-        }
-
-        #endregion
-        
+              
         #region Event Handlers
-
-        private void clicker_ClickStatusUpdated(object sender, EventArgs e)
-        {
-            UpdateLabel();
-        }
-
+        
         private void numClicksPerSecond_ValueChanged(object sender, EventArgs e)
         {
-            SetClicksPerSecond((int)numClicksPerSecond.Value);
+            _presenter.SetClicksPerSecond((int)numClicksPerSecond.Value);
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            StartClicking();
+            _presenter.StartClicking();
         }
 
         private void btnEnd_Click(object sender, EventArgs e)
         {
-            StopClicking();
+            _presenter.StopClicking();
         }
 
         private void cbxPrevent_CheckedChanged(object sender, EventArgs e)
         {
-            PreventClicking(cbxPrevent.Checked);
+            _presenter.PreventClicking(cbxPrevent.Checked);
         }
 
-        #endregion
+        private void cbxRightClick_CheckedChanged(object sender, EventArgs e)
+        {
+            _presenter.RightClick = cbxRightClick.Checked;
+        }
+
+        #endregion        
     }
 }

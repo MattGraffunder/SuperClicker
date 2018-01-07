@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClickerViewPresenter.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="ClickerView.cs">
       <SubType>Form</SubType>
